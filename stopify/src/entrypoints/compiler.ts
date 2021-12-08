@@ -38,7 +38,9 @@ function copyCompilerOpts(compileOpts: CompilerOpts): CompilerOpts {
     sourceMap: compileOpts.sourceMap,
     onDone: compileOpts.onDone,
     eval2: compileOpts.eval2,
-    compileMode: compileOpts.compileMode
+    compileMode: compileOpts.compileMode,
+    stackSize: compileOpts.stackSize,
+    restoreFrames: compileOpts.restoreFrames
   };
 }
 

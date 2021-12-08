@@ -88,7 +88,9 @@ export function checkAndFillCompilerOpts(
     sourceMap: sourceMaps.generateLineMapping(sourceMap),
     onDone: t.functionExpression(t.identifier('onDone'), [], t.blockStatement([])),
     eval2: false,
-    compileMode: 'normal'
+    compileMode: 'normal',
+    stackSize: Infinity,
+    restoreFrames: Infinity
   };
 
   copyProp(opts, value, 'compileFunction',

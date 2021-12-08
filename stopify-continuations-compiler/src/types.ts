@@ -20,7 +20,9 @@ export interface CompilerOpts {
   sourceMap: LineMapping,
   onDone: t.FunctionExpression,
   eval2: boolean,
-  compileMode: 'library' | 'normal'
+  compileMode: 'library' | 'normal',
+  stackSize: number,
+  restoreFrames: number
 }
 
 export type Runner = {

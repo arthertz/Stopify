@@ -38,6 +38,14 @@ commander.option(
   'Insert suspensions between every line of code in the source program');
 
 commander.option(
+  '--stackSize',
+  'Set custom stack size for compiled programs (experimental)');
+
+commander.option(
+  '--restoreFrames',
+  'Set custom restore frames for compiled programs (experimental)');
+
+commander.option(
   '--func',
   'Compile a top-level function. Doesnt add runtime initialization or cleanup');
 commander.option('--compile-mode <mode>',
@@ -55,7 +63,9 @@ export const compilerOpts: CompilerOpts = checkAndFillCompilerOpts({
   es: args.es,
   compileMode: args.compileMode,
   jsArgs: args.jsArgs,
-  requireRuntime: args.requireRuntime
+  requireRuntime: args.requireRuntime,
+  stackSize: args.stackSize,
+  restoreFrames: args.restoreFrames
 });
 
 const srcPath: string = args.args[0];
