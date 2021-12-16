@@ -72,8 +72,8 @@ export const visitor: Visitor = {
                 t.identifier('init')),
                 // add arguments to t.objectProperties  -- ARTHUR
                 [t.identifier('$__R'),
-                  t.objectExpression([t.objectProperty(t.identifier('stackSize'), t.stringLiteral(opts.stackSize.toString())),
-                                      t.objectProperty(t.identifier('restoreFrames'), t.stringLiteral(opts.restoreFrames.toString()))])]))]));
+                  t.objectExpression([t.objectProperty(t.identifier('stackSize'), t.numericLiteral(opts.stackSize)),
+                                      t.objectProperty(t.identifier('restoreFrames'), t.numericLiteral(opts.restoreFrames))])]))]));
     } else {
       // var $S = stopify.init($__R);
 

@@ -20,7 +20,9 @@ const validFlags = [
   'sourceMap',
   'onDone',
   'eval2',
-  'compileMode'
+  'compileMode',
+  'stackSize',
+  'restoreFrames'
 ];
 
 /**
@@ -127,5 +129,11 @@ export function checkAndFillCompilerOpts(
   copyProp(opts, value, 'compileMode',
     (x) => [ 'normal', 'library' ].includes(x),
     `.compileMode must be 'normal' or 'library'`);
+  transformProp(opts, value, 'stackSize',
+    (x) => Number(x), (x) => typeof x === 'number' && x > 0,
+    `.stackSize must be a number greater than zero`);
+  transformProp(opts, value, 'restoreFrames',
+    (x) => Number(x), (x) => typeof x === 'number' && x > 0,
+    `.restoreFrames must be a number greater than zero`);
   return opts;
 }

@@ -60,7 +60,9 @@ const defaultOpts: callcc.CompilerOpts = {
     onDone: t.functionExpression(t.identifier('onDone'), [], t.blockStatement([])),
     sourceMap: { getLine: (x, y) => null },
     eval2: false,
-    compileMode: 'normal'
+    compileMode: 'normal',
+    stackSize: Infinity,
+    restoreFrames: Infinity
 };
 
 export function compileFunction(

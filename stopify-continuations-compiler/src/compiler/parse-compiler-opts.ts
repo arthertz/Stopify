@@ -38,12 +38,12 @@ commander.option(
   'Insert suspensions between every line of code in the source program');
 
 commander.option(
-  '--stackSize',
-  'Set custom stack size for compiled programs (experimental)');
+  '--stack-size <size>',
+  'Maximum number of stack frames allowed in the runtime stack. Ignored if the runtime does not support deep stacks (default: Infinity)');
 
 commander.option(
-  '--restoreFrames',
-  'Set custom restore frames for compiled programs (experimental)');
+  '--restore-frames <size>',
+  'Number of frames to be restored onto the JS stack after a stack save. A constant implies deep stacks. Infinity implies shallow stacks. (default: Infinity)');
 
 commander.option(
   '--func',

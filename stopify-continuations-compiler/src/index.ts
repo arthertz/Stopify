@@ -63,7 +63,9 @@ const visitor: babel.Visitor = {
                             [t.identifier('r')]))
                         ])),
             eval2: false,
-            compileMode:  'normal'
+            compileMode:  'normal',
+            stackSize: Infinity,
+            restoreFrames: Infinity
         };
 
         h.transformFromAst(path,
